@@ -1,0 +1,20 @@
+{
+  "name": "kaar-practice",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node app.cjs",
+    "dev": "nodemon app.cjs"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.0",
+    "nodemon": "^3.1.10"
+  }
+}
