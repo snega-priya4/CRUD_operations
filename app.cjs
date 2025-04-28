@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
+require('dotenv').config();
 
 const Product = require('./models/product.model.js');
 app.use(express.json());
@@ -10,7 +11,7 @@ app.get('/testapi',(req,res)=>{
     res.send("hello snega")
 })
 
-app.listen(3000)
+app.listen(3000, () => {console.log("server started on port 3000")})
 
 app.post('/api/products', async (req, res) => {
     try{
@@ -73,5 +74,5 @@ app.post('/api/products', async (req, res) => {
     }
   })
   
-mongoose.connect('mongodb+srv://snegapriya4:KHcMHVFGVXfhrmj1@cluster0.ptqrk0r.mongodb.net/Node-api?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.DB_CONNECTION_STRING)
 .then(()=>console.log("connected"));
